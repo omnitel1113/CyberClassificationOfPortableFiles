@@ -9,7 +9,7 @@ A Neural Network that classifies portable files into legit or malicious based on
 
 ## Summary
 
-The project is to build a Neural Network (NN) which examines six out of fifty-five parameters in the PE header of a portable file. Based on the values and combinations of these parameters supplied to the NN it outputs its prediction for the class of the file - 0 is legitimate class, 1 is malicious class. It is part of Building AI course.
+The project is to build a Neural Network (NN) which examines six out of fifty-five parameters in the PE header of a portable file. Based on the values and combinations of these parameters supplied to the NN it outputs its prediction for the class of the file - 0 is legitimate class, 1 is malicious class. The project is part of Building AI course.
 
 
 ## Background
