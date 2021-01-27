@@ -114,7 +114,7 @@ print(100*p/len(y_test), "% difference, with nearest neighbours method.")
 
 I used the dataset gathered by another GitHub fellow - Dr. Ajit Kumar from Pondicherry University, India:
 [GitHub](https://github.com/urwithajit9/ClaMP).
-I took a subset of it with 4356 samples of PE header parameters (out of his 5185). For each sample I took 6 parameters from the PE header - E_file (file entropy), CreationYear, SizeOfInitializedData, DllCharacteristics, MajorImageVersion, CheckSum. The decision to process these parameters was based both on the observation of Dr. Ajit Kumar and the research paper of Yibin Liao from The University of Georgia, Athens, USA:
+I took a subset of it with 4356 samples of different portable execution files' PE header parameters (out of his 5185). For each sample I took 6 parameters from the PE header - E_file (file entropy), CreationYear, SizeOfInitializedData, DllCharacteristics, MajorImageVersion, CheckSum. The decision to process these parameters was based both on the observation of Dr. Ajit Kumar and the research paper of Yibin Liao from The University of Georgia, Athens, USA:
 [UGA](http://cobweb.cs.uga.edu/~liao/PE_Final_Report.pdf).
 
 
