@@ -26,22 +26,87 @@ Once you upload an image to your repository, you can link link to it like this (
 ![Upload_image](https://github.com/omnitel1113/my-new-project/blob/main/upload%20image.png)
 
 
-This is how you create code examples:
+The code of my NN:
 ```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
+import numpy as np
 
-   totPop = sum(pop)
-   totFish = sum(fishers)
+dataset = open("subset 6 parameters 4356.csv", "r")
+Header = dataset.readline()
+#print(Header)
 
-   # write your solution here
+I = dataset.read()
+Ilist = I.splitlines() # split the input features in lines - each line has the features of one training or testing file
+Olist = []
+for i in range(len(Ilist)):
+    m = Ilist[i].split(",") # form list of each set of fetures for a file
+    Olist.append(m[0]) # put the class column in separate list
+    m = m[1:] # take out the first (class - which shows malware or legit file) column and form features dataset
+    Ilist[i] = m
+# make train and test data numpy arrays
+split = input("How would you like to split the dataset for training and for testing? Usually 10% are committed for testing. Please input integer for testing: ")
+print()
+x_train = np.array(Ilist[:-int(split)], dtype = float)
+x_test = np.array(Ilist[-int(split):], dtype = float)
+dataset.close()            
+y_train = np.array(Olist[:-int(split)], dtype = float)
+y_test = Olist[-int(split):]
+y_test = [int(i) for i in y_test]
 
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
+#linear regresion, least squares calculation
+c = np.linalg.lstsq(x_train, y_train, rcond = None)[0]
+#print(c, "is c") 
+y_predict = (x_test @ c).tolist()
+y_step = []
+for j in range(len(y_predict)):
+    if y_predict[j] < 0.5:
+        y_step.append(0)
+    else:
+        y_step.append(1)
 
-main()
+#compare prediction/least squares method with real values for legit/malicious files
+o = 0
+for k in range(len(y_test)):
+    if y_test[k]-y_step[k] != 0:
+        o +=1
+
+#nearest neighbours method
+
+def dist(a, b): #define distance between two elements of two 1d np.lists
+    sum = 0
+    for ai, bi in zip(a, b):
+        sum = sum + (ai - bi)**2
+    return np.sqrt(sum)
+
+k = int(input("Please define the number of nearest neighbours to calculate the distance from them: "))
+
+for i, test_item in enumerate(x_test):
+        # calculate the distances to all training points
+        distances = [dist(train_item, test_item) for train_item in x_train]
+        D = list(np.sort(distances))
+        Dk = D[:k]
+        y_nearest = []
+        for j in range(len(Dk)):
+            nearest_indices = distances.index(Dk[j])
+            y_nearest.append(y_train[nearest_indices])
+        y_predict[i] = int(np.round(np.mean(y_nearest)))
+
+#compare prediction/nearest neighbours with real values for legit/malicious files
+
+p = 0
+for t in range(len(y_test)):
+    if y_test[t]-y_predict[t] != 0:
+        p +=1
+#print(y_test, "y_test")
+print()
+print(o, "differences out of", len(y_test), "comparisons by linear regression and least squares method.")
+print(100*o/len(y_test), "% difference with linear regression and least squares method.")
+#print(y_step, "prediction with linear regression and least squares method.")
+print()
+print(p, "differences out of", len(y_test), "comparisons by nearest neighbours method with", k, "nearest neighbours")
+print(100*p/len(y_test), "% difference, with nearest neighbours method.")
+#print(y_predict, "prediction by nearest neighbours method.")
+
+
 ```
 
 
