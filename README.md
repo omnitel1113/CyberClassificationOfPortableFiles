@@ -25,8 +25,6 @@ Images will make your README look nice!
 Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
 ![Upload_image](https://github.com/omnitel1113/my-new-project/blob/main/upload%20image.png)
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://github.com/omnitel1113/my-new-project/blob/main/upload%20image.png width="300">
 
 This is how you create code examples:
 ```
