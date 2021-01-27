@@ -30,7 +30,7 @@ The code of my NN:
 ```
 import numpy as np
 
-dataset = open("subset 6 parameters 4356.csv", "r")
+dataset = open("subset 6 parameters 4355.csv", "r")
 Header = dataset.readline()
 #print(Header)
 
