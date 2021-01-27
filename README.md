@@ -21,8 +21,6 @@ Deliberate penetrations and infections of IT systems by malicious hackers is ser
 
 The solution cannot be used standalone. As minimum it needs to be fed with data for six of the parameters of the PE header of the protable file. Further it can be implemented  as input to IT defensive systems like Firewall, IPS, etc. It can be integrated within a larger cyber security system placed in any IT infrastructure (from a single computer to a large scale IT network). It can work (as part of larger cyber security system) independantly from humans, drawing their attention only when harmful code is about to be executed within the secured IT system. Natural user of it are IT security experts within the CISO team.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
 ![Upload_image](https://github.com/omnitel1113/CyberClassificationOfPortableFiles/blob/main/upload%20image.png)
 
 
