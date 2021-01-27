@@ -114,23 +114,23 @@ print(100*p/len(y_test), "% difference, with nearest neighbours method.")
 
 I used the dataset gathered by another GitHub fellow - Dr. Ajit Kumar from Pondicherry University, India:
 [GitHub](https://github.com/urwithajit9/ClaMP).
-I took a subset of it with 4356 samples of different portable execution files' PE header parameters (out of his 5185). For each sample I took 6 parameters from the PE header - E_file (file entropy), CreationYear, SizeOfInitializedData, DllCharacteristics, MajorImageVersion, CheckSum. The decision to process these parameters was based both on the observation of Dr. Ajit Kumar and the research paper of Yibin Liao from The University of Georgia, Athens, USA:
+I took a subset of it with 4355 samples of different portable execution files' PE header parameters (out of his 5185). For each sample I took 6 parameters from the PE header - E_file (file entropy), CreationYear, SizeOfInitializedData, DllCharacteristics, MajorImageVersion, CheckSum. The decision to process these parameters was based both on the observation of Dr. Ajit Kumar and the research paper of Yibin Liao from The University of Georgia, Athens, USA:
 [UGA](http://cobweb.cs.uga.edu/~liao/PE_Final_Report.pdf).
 
+The NN uses sequentially two methods for classification - linear regression with least squares method and nearest K neighbours method. The second method generally behaves better with about 5% better success ratio. Approximately 20% false results (positive and negative) against ~ 25% with the linear regression.
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+1. The proposed NN is having comparatevily high number of false positives (~11%) and false negatives (~15%), based on it linear regression method with test set of 400 and train set of 3995 sets of input features. Reason to me is that the NN is simple single layer only network which is not suitable to use when the data shows non-linear characteristics. I think that adding additional hidden layer/s will improve considerably its classification performance but currently cannot figure out the implementation of the hidden layers, their activation functions and weights toward the next level.
+2. Choosing just 6 out of 55 parameters of the PE header to me also deprives the NN of abilities to make good decisions. More observation need to be done on the differences between rest 49 parameters in legitimate and malicious portable files.
 
 ## What next?
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
+1. Addressing the challanges from the previous section to me are the immediate necessity for help to improve the system considerably.
+2. Expanding the capabilities of the NN to inspect not only portable files will give great new value of it. For this probably quite different parameters must be considered and gathered which could be the long term objective of the project.
 
 
 ## Acknowledgments
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: 
-* etc
+My biggest source of inspiration was University of Helsinki and its Reaktor courses - Introduction to AI and Buiding AI.
+Also without the works mentioned in the section "Data sources" the current status of the project could not be possible. 
