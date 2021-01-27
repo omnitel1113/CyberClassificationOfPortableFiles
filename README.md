@@ -3,7 +3,7 @@
 created by Reaktor Innovations and University of Helsinki. 
 Copy the template, paste it to your GitHub README and edit! -->
 
-# Project Title
+# Classifier of portable files into legit or malicious based on features in their PE headers
 
 A Neural Network that classifies portable files into legit or malicious based on features in their PE headers.
 
