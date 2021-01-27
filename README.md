@@ -23,7 +23,7 @@ The solution cannot be used standalone. As minimum it needs to be fed with data 
 
 Images will make your README look nice!
 Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Upload_image](https://github.com/omnitel1113/my-new-project/blob/main/upload%20image.png)
+![Upload_image](https://github.com/omnitel1113/CyberClassificationOfPortableFiles/blob/main/subset%206%20parameters%204355.csv)
 
 
 The code of my NN:
