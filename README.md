@@ -5,21 +5,16 @@ Copy the template, paste it to your GitHub README and edit! -->
 
 # Project Title
 
-Final project for the Building AI course
+A Neural Network that classifies portable files into legit or malicious based on features in their PE headers.
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+The project is to build a Neural Network (NN) which examines six out of fifty-five parameters in the PE header of a portable file. Based on the values and combinations of these parameters supplied to the NN it outputs its prediction for the class of the file - 0 is legitimate class, 1 is malicious class.
 
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
-
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+Deliberate penetrations and infections of IT systems by malicious hackers is serious and growing problem. The attack techniques become more sophisticated and their number rises every day. Today, the signature based anti virus programs although quite advanced cannot always cope with the problem. They perform great on hash signatures of known attack vectors but are poor when meeting new, not yet discovered and/or published threats (so called zero day attacks). Furthermore the anti virus programs rely on the timely manner in which the users and/or administrators of IT networks update the libraries for known viruses. If an update is missed the IT system becomes vulnerable to latest threats. Therefore the science and industry in parallel are proposing other methods for cyberdefense. In general these methods give their decision based not so much on the existance or not of the inspected code in a antivirus library, but on other attributes of the code as for example its parameter characteristic fields, its communication to external entities, its behaviour, etc.  An experienced cyber analyst can easily detect strange and harmful behaviour of certain piece of code, but even she/he will be in trouble when chasing it in a large IT system or coping with many malicious codes at one and the same time. The depicted problem is quite common and frequent. Myself being an integrator of cyber security systems face such challanges quite often. To me the solution is to use AI systems which could become an indispensable assistant to IT security experts and my motivation to open the project is to try to address a tiny portion of the enormous cyber defense domain.
 
 
 ## How is it used?
