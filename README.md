@@ -1,5 +1,4 @@
-#Finding malicious portable files
-Building AI course project
+#Building AI course project
 <!-- This is the markdown template for the final project of the Building AI course, 
 created by Reaktor Innovations and University of Helsinki. 
 Copy the template, paste it to your GitHub README and edit! -->
